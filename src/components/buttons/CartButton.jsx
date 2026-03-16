@@ -12,7 +12,7 @@ const CartButton = () => {
     <button
       onClick={handleAddToCart}
       disabled={inCart}
-      className="flex-1 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition text-center disabled:bg-gray-400 disabled:cursor-not-allowed"
+      className="flex-1 bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition text-center disabled:bg-gray-400 disabled:cursor-not-allowed "
     >
       {inCart ? "Added" : "Add to Cart"}
     </button>

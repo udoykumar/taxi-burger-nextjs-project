@@ -5,7 +5,7 @@ const Loading = () => {
     <div className="max-w-6xl mx-auto px-4 py-10 animate-pulse">
       <div className="grid md:grid-cols-2 gap-10 items-center">
         {/* Image Skeleton */}
-        <div className="h-[400px] bg-gray-300 rounded-2xl"></div>
+        <div className="h-100 bg-gray-300 rounded-2xl"></div>
 
         {/* Content Skeleton */}
         <div className="space-y-5">

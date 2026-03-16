@@ -31,7 +31,7 @@ const Page = async ({ params }) => {
           <img
             src={food.foodImg}
             alt={food.title}
-            className="w-full h-[400px] object-cover hover:scale-105 transition duration-300"
+            className="w-full h-100 object-cover hover:scale-105 transition duration-300"
           />
         </div>
 
@@ -53,6 +53,7 @@ const Page = async ({ params }) => {
             <a
               href={food.video}
               target="_blank"
+              rel="noopener noreferrer"
               className="border border-gray-300 px-6 py-3 rounded-xl hover:bg-gray-900 transition"
             >
               video

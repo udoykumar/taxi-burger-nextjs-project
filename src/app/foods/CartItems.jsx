@@ -1,10 +1,10 @@
 "use client";
 import React, { use } from "react";
-import { CartContext } from "../context/CartProvider";
+import { CartContext } from "../../context/CartProvider";
 
 const CartItems = () => {
   const { cart } = use(CartContext);
-  return <div>{cart.length} Items Added </div>;
+  return <div>{cart.length} Items Added</div>;
 };
 
 export default CartItems;

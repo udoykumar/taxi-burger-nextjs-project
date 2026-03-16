@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import CartProvider from "./context/CartProvider";
+import CartProvider from "../context/CartProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,13 +30,13 @@ export default function RootLayout({ children }) {
           </Link>
           <div className="space-x-5">
             <Link
-              className="px-4 py-2 bg-black text-white rounded-md cursor-pointer"
+              className="px-4 py-2 bg-black text-white rounded-md cursor-pointer hover:shadow-lg hover:shadow-white duration-200"
               href="/foods"
             >
               Foods
             </Link>
             <Link
-              className="px-4 py-2 bg-black text-white rounded-md cursor-pointer"
+              className="px-4 py-2 bg-black text-white rounded-md cursor-pointer hover:shadow-lg hover:shadow-white duration-200"
               href="/reviews"
             >
               Reviews

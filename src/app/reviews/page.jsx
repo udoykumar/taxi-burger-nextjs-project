@@ -15,13 +15,12 @@ const Reviews = () => {
       })
       .catch((err) => console.error(err));
   }, []);
-  console.log(reviews);
   if (loading) {
     return <ReviewLoading />;
   }
   return (
     <div>
-      <h2 className="text-4xl font-bold">
+      <h2 className="text-4xl font-bold text-white">
         Total: <span className="text-yellow-500">({reviews.length})</span>
         Reviews
       </h2>

@@ -27,7 +27,7 @@ const Foods = async () => {
             <FoodCard key={food.id} food={food} />
           ))}
         </div>
-        <div className="w-[250px] border-2 rounded-lg p-3">
+        <div className="w-62.5 border-2 rounded-lg p-3">
           <h2 className="text-2xl font-bold text-center">cart item</h2> <hr />
           <CartItems />
         </div>
