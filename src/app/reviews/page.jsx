@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import ReviewCard from "../components/review/ReviewCard";
+import ReviewCard from "../../components/review/ReviewCard";
 import ReviewLoading from "./ReviewLoading";
 
 const Reviews = () => {

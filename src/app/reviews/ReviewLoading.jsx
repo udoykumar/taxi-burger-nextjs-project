@@ -1,5 +1,5 @@
 import React from "react";
-import ReviewCardSkeleton from "../components/skeletons/ReviewCardSkeleton";
+import ReviewCardSkeleton from "../../components/skeletons/ReviewCardSkeleton";
 
 const ReviewLoading = () => {
   return (

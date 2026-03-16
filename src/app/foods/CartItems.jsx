@@ -1,7 +1,10 @@
-import React from "react";
+"use client";
+import React, { use } from "react";
+import { CartContext } from "../context/CartProvider";
 
 const CartItems = () => {
-  return <div>{0} Items Added </div>;
+  const { cart } = use(CartContext);
+  return <div>{cart.length} Items Added </div>;
 };
 
 export default CartItems;

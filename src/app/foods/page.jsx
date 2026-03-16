@@ -1,5 +1,5 @@
 import React from "react";
-import FoodCard from "../components/cards/FoodCard";
+import FoodCard from "../../components/cards/FoodCard";
 import { resolve } from "styled-jsx/css";
 import CartItems from "./CartItems";
 const getFoods = async () => {
@@ -16,7 +16,7 @@ const Foods = async () => {
     (food) => food.category.toLowerCase() !== "beef",
   );
   return (
-    <div>
+    <div className="">
       <h2 className="text-4xl font-bold">
         Total: <span className="text-yellow-500">({filterFood.length})</span>{" "}
         Found

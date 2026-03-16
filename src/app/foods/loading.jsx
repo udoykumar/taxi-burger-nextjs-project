@@ -1,5 +1,5 @@
 import React from "react";
-import FoodCardSkeleton from "../components/skeletons/FoodCardSkeletons";
+import FoodCardSkeleton from "@/components/skeletons/FoodCardSkeletons";
 
 const loading = () => {
   return (

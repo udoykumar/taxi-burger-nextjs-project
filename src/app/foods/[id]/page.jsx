@@ -24,7 +24,7 @@ const Page = async ({ params }) => {
   }
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="max-w-6xl mx-auto px-10 py-20 bg-black rounded-lg">
       <div className="grid md:grid-cols-2 gap-10 items-center">
         {/* Image */}
         <div className="overflow-hidden rounded-2xl shadow-lg">
@@ -36,23 +36,27 @@ const Page = async ({ params }) => {
         </div>
 
         {/* Details */}
-        <div className="space-y-5">
+        <div className="space-y-5 text-white">
           <span className="inline-block bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm">
             {food.category}
           </span>
 
-          <h1 className="text-4xl font-bold ">{food.title}</h1>
+          <h1 className="text-4xl font-bold text-gray-400">{food.title}</h1>
 
           <p className="text-3xl font-semibold text-green-600">${food.price}</p>
-
+          <p className="text-gray-500 font-bold">{food.area}</p>
           <div className="flex gap-4 pt-5">
             <button className="bg-green-600 text-white px-6 py-3 rounded-xl hover:bg-green-700 transition">
               Add to Cart
             </button>
 
-            <button className="border border-gray-300 px-6 py-3 rounded-xl hover:bg-gray-100 transition">
-              Back
-            </button>
+            <a
+              href={food.video}
+              target="_blank"
+              className="border border-gray-300 px-6 py-3 rounded-xl hover:bg-gray-900 transition"
+            >
+              video
+            </a>
           </div>
         </div>
       </div>
