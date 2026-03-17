@@ -17,7 +17,7 @@ const FoodCard = ({ food }) => {
       {/* Content */}
       <div className="p-4 space-y-2 flex flex-col">
         <h2 className="text-lg font-bold flex-1 ">{food.title}</h2>
-        <p className="text-sm text-gray-500">{food.category}</p>
+        <p className="text-sm text-gray-300 font-bold">{food.category}</p>
 
         <div className="flex items-center justify-between mt-3">
           <span className="text-xl font-semibold text-green-600">

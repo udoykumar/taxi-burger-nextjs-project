@@ -3,16 +3,18 @@ import FoodCard from "../../components/cards/FoodCard";
 import { resolve } from "styled-jsx/css";
 import CartItems from "./CartItems";
 import InputSearch from "@/components/InputSearch";
-const getFoods = async () => {
+const getFoods = async (search) => {
   const res = await fetch(
-    " https://taxi-kitchen-api.vercel.app/api/v1/foods/random",
+    ` https://taxi-kitchen-api.vercel.app/api/v1/foods/random?search=${search}`,
   );
   const data = await res.json();
   await new Promise((resolve) => setTimeout(resolve, 300));
   return data.foods || [];
 };
-const Foods = async () => {
-  const foods = await getFoods();
+const Foods = async ({ searchParams }) => {
+  const { search = "" } = await searchParams;
+  console.log(search);
+  const foods = await getFoods(search);
   const filterFood = foods.filter(
     (food) => food.category.toLowerCase() !== "beef",
   );
