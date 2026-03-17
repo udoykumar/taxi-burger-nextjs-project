@@ -1,6 +1,7 @@
 "use client";
 import { useRouter, useSearchParams } from "next/navigation";
 import React from "react";
+import { Search } from "lucide-react"; // Icon use korle premium lage
 
 const InputSearch = () => {
   const router = useRouter();
@@ -10,25 +11,60 @@ const InputSearch = () => {
     e.preventDefault();
     const form = e.target;
     const value = form.search.value;
-    // new search parameters
     const newParams = new URLSearchParams(params.toString());
-    // set query parameter
-    newParams.set("search", value);
+
+    if (value) {
+      newParams.set("search", value);
+    } else {
+      newParams.delete("search");
+    }
+
     router.push(`?${newParams.toString()}`);
   };
+
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className="w-1/2 my-10 px-4">
+      <form
+        onSubmit={handleSubmit}
+        className="relative group flex items-center bg-white rounded-2xl shadow-sm border border-slate-200 p-1.5 transition-all duration-300 focus-within:shadow-md "
+      >
+        {/* Left Search Icon */}
+        <div className="pl-4 pr-2 text-slate-400 group-focus-within:text-indigo-500 transition-colors">
+          <Search size={20} />
+        </div>
+
+        {/* Input Field */}
         <input
           name="search"
           type="text"
-          placeholder="Enter food name"
-          className="px-3 py-2 rounded-lg border-none focus:outline-none focus:border-orange-500 placeholder:text-orange-500 focus:text-orange-500 transition duration-300 w-2xl ring ring-orange-500"
+          placeholder="Craving something specific? Search here..."
+          className="flex-1 bg-transparent px-2 py-3 text-slate-700 placeholder:text-slate-400 focus:outline-none font-medium text-lg"
         />
-        <button className="bg-orange-500 text-white py-2 px-4 rounded-lg hover:bg-orange-600 transition duration-300">
+
+        {/* Animated Search Button */}
+        <button
+          type="submit"
+          className="bg-black/80 hover:bg-black text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 active:scale-95 shadow-indigo-100 hover:shadow-lg shadow-md"
+        >
           Search
         </button>
       </form>
+
+      {/* Short suggestion tags under search (Extra Style) */}
+      {/* <div className="flex gap-2 mt-3 ml-2">
+        <span className="text-xs font-medium text-slate-400 uppercase tracking-widest">
+          Trending:
+        </span>
+        <button className="text-xs font-semibold text-indigo-500 hover:underline">
+          Pizza
+        </button>
+        <button className="text-xs font-semibold text-indigo-500 hover:underline">
+          Burger
+        </button>
+        <button className="text-xs font-semibold text-indigo-500 hover:underline">
+          Katsudon
+        </button>
+      </div> */}
     </div>
   );
 };
