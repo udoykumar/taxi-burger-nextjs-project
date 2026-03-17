@@ -1,4 +1,5 @@
 // app/foods/[id]/page.jsx
+import Image from "next/image";
 import React from "react";
 
 export async function generateMetadata({ params }) {
@@ -36,9 +37,11 @@ const Page = async ({ params }) => {
       <div className="grid md:grid-cols-2 gap-10 items-center">
         {/* Image */}
         <div className="overflow-hidden rounded-2xl shadow-lg">
-          <img
+          <Image
             src={food.foodImg}
             alt={food.title}
+            width={300}
+            height={150}
             className="w-full h-100 object-cover hover:scale-105 transition duration-300"
           />
         </div>

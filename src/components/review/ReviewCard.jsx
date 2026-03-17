@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const ReviewCard = ({ review }) => {
@@ -21,7 +22,9 @@ const ReviewCard = ({ review }) => {
     <div className="bg-black/80 shadow-md rounded-2xl p-6 hover:shadow-xl transition duration-300">
       {/* Top Section */}
       <div className="flex items-center gap-4">
-        <img
+        <Image
+          width={56}
+          height={56}
           src={photo}
           alt={user}
           className="w-14 h-14 rounded-full object-cover"
