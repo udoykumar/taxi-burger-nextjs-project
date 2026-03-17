@@ -11,15 +11,17 @@ const getFoods = async (search) => {
   await new Promise((resolve) => setTimeout(resolve, 300));
   return data.foods || [];
 };
+
+export const metadata = {
+  title: "Foods",
+  description: "Fast Food in Noakhali",
+};
 const Foods = async ({ searchParams }) => {
   const { search = "" } = await searchParams;
-  console.log(search);
   const foods = await getFoods(search);
-  console.log(foods);
   const filterFood = foods.filter(
     (food) => food.category.toLowerCase() !== "beef",
   );
-  // console.log(filterFood);
   return (
     <div className="">
       <h2 className="text-4xl font-bold">
