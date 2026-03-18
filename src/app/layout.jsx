@@ -27,8 +27,9 @@ export default function RootLayout({ children }) {
             <Image
               src={"/logo.png"}
               alt="logo"
-              width={120}
-              height={30}
+              width={550}
+              height={377}
+              priority
               className="w-30"
             />
           </Link>
